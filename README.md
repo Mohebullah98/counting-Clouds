@@ -17,3 +17,9 @@ Input: sky = [
 ]
 Output: 3
 ```
+## Approach 
+For each cell of grid, check if cell == 1, if so then check if cell above and cell to the left both == 0, if so then increment count.
+
+If row == 0 or column == 0, then automatically assume that the above or before cell equals zero since it doesn't exist.
+
+The technique here is to only count the first 1 in a stream of possible consecutive 1s.
