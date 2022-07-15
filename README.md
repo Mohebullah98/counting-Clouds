@@ -17,9 +17,15 @@ Input: sky = [
 ]
 Output: 3
 ```
+```java
+int sky3[][] ={{1,1,1,1,1,1},
+               {0,0,0,1,1,1},
+               {0,0,1,0,1,0},
+               {1,1,1,1,1,1}};
+
+System.out.println(countClouds(sky3)); //should be 1 cloud
+```
 ## Approach 
-For each cell of grid, check if cell == 1, if so then check if cell above and cell to the left both == 0, if so then increment count.
+Perform a depth first search on the grid everywhere where valu1 =1. 
 
-If row == 0 or column == 0, then automatically assume that the above or before cell equals zero since it doesn't exist.
-
-The technique here is to only count the first 1 in a stream of possible consecutive 1s.
+The goal is to set all 1s that are connected horizontally and vertically equal to zero until we reach a zero or the end of the grid. This will help group connected ones together.
